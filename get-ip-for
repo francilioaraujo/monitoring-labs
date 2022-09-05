@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+PROJECT=${PWD##*/}
+
+docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ${PROJECT}_${1}_1
