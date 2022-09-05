@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+if [[ -z $1 ]]
+then
+  echo Adicione o nome do serviço. Ex: $0 prometheus
+  exit 1
+fi
+
+PROJECT=${PWD##*/}
+
+docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ${PROJECT}_${1}_1

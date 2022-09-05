@@ -1,0 +1,9 @@
+services:
+  prometheus:
+    build: prometheus
+    command: /bin/bash
+    tty: true
+    networks:
+      - lab
+networks:
+  lab:
